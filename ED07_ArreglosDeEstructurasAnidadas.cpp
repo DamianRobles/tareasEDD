@@ -46,6 +46,7 @@ int main(void){
     amigoNuevo[i] = leer();
   } //for i
   
+  // imprimir datos
   for(int i=0; i<MAX; i++){
     imprimir(amigoNuevo[i], i+1);
   } // for i
