@@ -35,6 +35,18 @@ int main(void){
   // declaracion de variables
   amigo amigoNuevo;
 
+  cout << "Este programa ejemplifica eluso de arreglos de estructuras anidadas" << endl;
+
+  // leer datos
+  cout << "Ingresa los datos de tu nuevo amigo:" << endl;
+  cout << "Nombre de pila (ej. Juan): ";
+  cin.getline(amigoNuevo.nombreAmigo.nomPila, 30, '\n');
+  cout << "Apellido paterno: ";
+  cin.getline(amigoNuevo.nombreAmigo.aPaterno, 30, '\n');
+  cout << "Apellido materno: ";
+  cin.getline(amigoNuevo.nombreAmigo.aMaterno, 30, '\n');
+
+  
   
 
 
