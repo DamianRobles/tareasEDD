@@ -64,27 +64,28 @@ int main(void){
     cin.getline(amigoNuevo[i].numTel, 20, '\n');
   } //for i
   
-
+  for(int i=0; i<MAX; i++){
+    imprimir(amigoNuevo[i], i+1);
+  } // for i
 
   return 0;
 } // main
 
 // implementacion de funciones
 void imprimir(amigo datos, int num){
-    cout << "====================================================" endl;
-    cout << "Datos de tu nuevo amigo:" << endl;
-    cout << "Nombre: " << datos.nomAmigo.nomPila << endl;
-    cout << "Apellido paterno: " << datos.nomAmigo.aPaterno << endl;
-    cout << "Apellido materno: " << datos.nomAmigo.aMaterno << endl;
-
-    cout << "Domicilio (calle): " << datos.domAmigo.calle << endl;
-    cout << "Colonia: " << datos.domAmigo.colonia << endl;
-    cout << "Numero: " << datos.domAmigo.numero << endl;
-    cout << "Codigo Postal: "; << datos.domAmigo.cp << endl;
-
-    cout << "Numero telefonico: " << datos.numTel << endl;
-    cout << "====================================================";
-
+  cout << "====================================================" << endl;
+  cout << "Datos de tu nuevo amigo numero " << num << endl;
+  cout << "Nombre de pila      : " << datos.nomAmigo.nomPila << endl;
+  cout << "Apellido paterno    : " << datos.nomAmigo.aPaterno << endl;
+  cout << "Apellido materno    : " << datos.nomAmigo.aMaterno << endl;
+  cout << "Domicilio (calle)   : " << datos.domAmigo.calle << endl;
+  cout << "Domicilio (colonia) : " << datos.domAmigo.colonia << endl;
+  cout << "Numero              : " << datos.domAmigo.numero << endl;
+  cout << "Codigo Postal       : " << datos.domAmigo.cp << endl;
+  cout << "Numero telefonico   : " << datos.numTel << endl;
+  cout << "====================================================" << endl;
+  
+  return;
 } // imprimir
 
 // fin de archivo
