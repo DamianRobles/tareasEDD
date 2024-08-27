@@ -46,6 +46,17 @@ int main(void){
   cout << "Apellido materno: ";
   cin.getline(amigoNuevo.nombreAmigo.aMaterno, 30, '\n');
 
+  cout << "Domicilio: ";
+  cin.getline(amigoNuevo.domAmigo.calle, 25, '\n');
+  cout << "Colonia: ";
+  cin.getline(amigoNuevo.domAmigo.colonia, 25, '\n');
+  cout << "Numero: ";
+  cin >> amigoNuevo.domAmigo.numero;
+  cout << "Codigo Postal: ";
+  cin >> amigoNuevo.domAmigo.cp;
+  
+  cout << "Numero telefonico: ";
+  cin.getline(amigoNuevo.numTel, 20, '\n');
   
   
 
