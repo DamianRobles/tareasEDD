@@ -33,6 +33,7 @@ const int MAX=3;
 
 // prototipo de funcion
 void imprimir(amigo, int);
+amigo leer(void);
 
 int main(void){
   // declaracion de variables
@@ -42,26 +43,7 @@ int main(void){
 
   // leer datos
   for(int i=0; i<MAX; i++){
-    cout << "Ingresa los datos de tu nuevo amigo:" << endl;
-    cout << "Nombre de pila (ej. Juan): ";
-    cin.getline(amigoNuevo[i].nomAmigo.nomPila, 30, '\n');
-    cout << "Apellido paterno: ";
-    cin.getline(amigoNuevo[i].nomAmigo.aPaterno, 30, '\n');
-    cout << "Apellido materno: ";
-    cin.getline(amigoNuevo[i].nomAmigo.aMaterno, 30, '\n');
-
-    cout << "Domicilio: ";
-    cin.getline(amigoNuevo[i].domAmigo.calle, 25, '\n');
-    cout << "Colonia: ";
-    cin.getline(amigoNuevo[i].domAmigo.colonia, 25, '\n');
-    cout << "Numero: ";
-    cin >> amigoNuevo[i].domAmigo.numero;
-    cout << "Codigo Postal: ";
-    cin >> amigoNuevo[i].domAmigo.cp;
-    
-    cin.ignore();
-    cout << "Numero telefonico: ";
-    cin.getline(amigoNuevo[i].numTel, 20, '\n');
+    amigoNuevo[i] = leer();
   } //for i
   
   for(int i=0; i<MAX; i++){
@@ -72,6 +54,36 @@ int main(void){
 } // main
 
 // implementacion de funciones
+//=========================================================
+amigo leer(void){
+  amigo amigoN;
+
+  // leer datos
+  cout << "Ingresa los datos de tu nuevo amigo:" << endl;
+  cout << "Nombre de pila (ej. Juan): ";
+  cin.getline(amigoN.nomAmigo.nomPila, 30, '\n');
+  cout << "Apellido paterno: ";
+  cin.getline(amigoN.nomAmigo.aPaterno, 30, '\n');
+  cout << "Apellido materno: ";
+  cin.getline(amigoN.nomAmigo.aMaterno, 30, '\n');
+
+  cout << "Domicilio: ";
+  cin.getline(amigoN.domAmigo.calle, 25, '\n');
+  cout << "Colonia: ";
+  cin.getline(amigoN.domAmigo.colonia, 25, '\n');
+  cout << "Numero: ";
+  cin >> amigoN.domAmigo.numero;
+  cout << "Codigo Postal: ";
+  cin >> amigoN.domAmigo.cp;
+  
+  cin.ignore();
+  cout << "Numero telefonico: ";
+  cin.getline(amigoN.numTel, 20, '\n');
+
+  return amigoN;
+} // leer
+
+//=========================================================
 void imprimir(amigo datos, int num){
   cout << "====================================================" << endl;
   cout << "Datos de tu nuevo amigo numero " << num << endl;
