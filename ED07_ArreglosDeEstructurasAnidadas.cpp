@@ -28,10 +28,11 @@ struct amigo{
 };
 
 
-// prototipo de funcion
-
 // constantes
 const int MAX=3;
+
+// prototipo de funcion
+void imprimir(amigo, int);
 
 int main(void){
   // declaracion de variables
@@ -68,6 +69,22 @@ int main(void){
   return 0;
 } // main
 
-// definicion de funciones
+// implementacion de funciones
+void imprimir(amigo datos, int num){
+    cout << "====================================================" endl;
+    cout << "Datos de tu nuevo amigo:" << endl;
+    cout << "Nombre: " << datos.nomAmigo.nomPila << endl;
+    cout << "Apellido paterno: " << datos.nomAmigo.aPaterno << endl;
+    cout << "Apellido materno: " << datos.nomAmigo.aMaterno << endl;
+
+    cout << "Domicilio (calle): " << datos.domAmigo.calle << endl;
+    cout << "Colonia: " << datos.domAmigo.colonia << endl;
+    cout << "Numero: " << datos.domAmigo.numero << endl;
+    cout << "Codigo Postal: "; << datos.domAmigo.cp << endl;
+
+    cout << "Numero telefonico: " << datos.numTel << endl;
+    cout << "====================================================";
+
+} // imprimir
 
 // fin de archivo
