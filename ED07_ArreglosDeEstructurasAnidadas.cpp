@@ -11,22 +11,32 @@ using namespace std;
 
 // TDA
 struct domicilio{
-    char calle[25];
-    int numero;
-    char colonia[30];
-    int cp;
+  char calle[25];
+  int numero;
+  char colonia[30];
+  int cp;
 };
 struct nombre{
-    char nomPila[30];
-    char aPaterno[30];
-    char aMaterno[30];
+  char nomPila[30];
+  char aPaterno[30];
+  char aMaterno[30];
 };
+struct amigo{
+  nombre nomAmigo;
+  domicilio domAmigo;
+  char numTel[20];
+}
+
 
 // prototipo de funcion
 
 
 int main(void){
   // declaracion de variables
+  amigo amigoNuevo;
+
+  
+
 
   return 0;
 } // main
