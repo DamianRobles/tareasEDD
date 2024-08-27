@@ -43,6 +43,7 @@ int main(void){
 
   // leer datos
   for(int i=0; i<MAX; i++){
+      cout << "Ingresa los datos de tu nuevo amigo " << i+1 << endl;
     amigoNuevo[i] = leer();
   } //for i
   
@@ -60,7 +61,6 @@ amigo leer(void){
   amigo amigoN;
 
   // leer datos
-  cout << "Ingresa los datos de tu nuevo amigo:" << endl;
   cout << "Nombre de pila (ej. Juan): ";
   cin.getline(amigoN.nomAmigo.nomPila, 30, '\n');
   cout << "Apellido paterno: ";
@@ -87,7 +87,7 @@ amigo leer(void){
 //=========================================================
 void imprimir(amigo datos, int num){
   cout << "====================================================" << endl;
-  cout << "Datos de tu nuevo amigo numero " << num << endl;
+  cout << "Datos de tu nuevo amigo " << num << endl;
   cout << "Nombre de pila      : " << datos.nomAmigo.nomPila << endl;
   cout << "Apellido paterno    : " << datos.nomAmigo.aPaterno << endl;
   cout << "Apellido materno    : " << datos.nomAmigo.aMaterno << endl;
