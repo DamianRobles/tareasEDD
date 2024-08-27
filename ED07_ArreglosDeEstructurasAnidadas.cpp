@@ -25,39 +25,43 @@ struct amigo{
   nombre nomAmigo;
   domicilio domAmigo;
   char numTel[20];
-}
+};
 
 
 // prototipo de funcion
 
+// constantes
+const int MAX=3;
 
 int main(void){
   // declaracion de variables
-  amigo amigoNuevo;
+  amigo amigoNuevo[MAX];
 
   cout << "Este programa ejemplifica eluso de arreglos de estructuras anidadas" << endl;
 
   // leer datos
-  cout << "Ingresa los datos de tu nuevo amigo:" << endl;
-  cout << "Nombre de pila (ej. Juan): ";
-  cin.getline(amigoNuevo.nombreAmigo.nomPila, 30, '\n');
-  cout << "Apellido paterno: ";
-  cin.getline(amigoNuevo.nombreAmigo.aPaterno, 30, '\n');
-  cout << "Apellido materno: ";
-  cin.getline(amigoNuevo.nombreAmigo.aMaterno, 30, '\n');
+  for(int i=0; i<MAX; i++){
+    cout << "Ingresa los datos de tu nuevo amigo:" << endl;
+    cout << "Nombre de pila (ej. Juan): ";
+    cin.getline(amigoNuevo[i].nomAmigo.nomPila, 30, '\n');
+    cout << "Apellido paterno: ";
+    cin.getline(amigoNuevo[i].nomAmigo.aPaterno, 30, '\n');
+    cout << "Apellido materno: ";
+    cin.getline(amigoNuevo[i].nomAmigo.aMaterno, 30, '\n');
 
-  cout << "Domicilio: ";
-  cin.getline(amigoNuevo.domAmigo.calle, 25, '\n');
-  cout << "Colonia: ";
-  cin.getline(amigoNuevo.domAmigo.colonia, 25, '\n');
-  cout << "Numero: ";
-  cin >> amigoNuevo.domAmigo.numero;
-  cout << "Codigo Postal: ";
-  cin >> amigoNuevo.domAmigo.cp;
-  
-  cout << "Numero telefonico: ";
-  cin.getline(amigoNuevo.numTel, 20, '\n');
-  
+    cout << "Domicilio: ";
+    cin.getline(amigoNuevo[i].domAmigo.calle, 25, '\n');
+    cout << "Colonia: ";
+    cin.getline(amigoNuevo[i].domAmigo.colonia, 25, '\n');
+    cout << "Numero: ";
+    cin >> amigoNuevo[i].domAmigo.numero;
+    cout << "Codigo Postal: ";
+    cin >> amigoNuevo[i].domAmigo.cp;
+    
+    cin.ignore();
+    cout << "Numero telefonico: ";
+    cin.getline(amigoNuevo[i].numTel, 20, '\n');
+  } //for i
   
 
 
