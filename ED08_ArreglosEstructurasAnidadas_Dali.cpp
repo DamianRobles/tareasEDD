@@ -1,25 +1,11 @@
 /*
-  *Fecha: martes 27 agosto de 2024
-  *Autor: Dali
-  *Practica No.: 7
-  *Objetivo: Arreglos de estructuras anidadas
+  ! Fecha: lunes 2 de septiembre de 2024
+  ! Autor: Dali
+  ! Practica No.: 8
+  ! Objetivo: Arreglos de estructuras anidadas con uso de funciones
 */
 
-/*
-*Deberás  leer y almacenar los datos para un arreglo de 3 elementos tipo de dato tu estructura anidada (arreglo de estructuras anidadas).
-*Implementar una función para leer una variable del tipo de dato de tu propia estructura anidada, la función la devolverá y será asignada a cada elemento de tu arreglo de estructuras declarado en el main( ).
-*Implementar una función que deberá recibir e imprimir todos los elementos de tu arreglo de estructuras. Puede recibir todo el arreglo para imprimirlo o bien, puede recibir cada elemento del arreglo, 
-*uno por uno e imprimirlos.
-*/
-
-/*
-*Si creó una función para leer y devolver una variable de la estructura definida con 5 miembros y anidada y lo hace correctamente. (3 puntos)
-*Si creó una función para imprimir los elementos de un arreglo de estructuras, que se recibirán como parámetro en la función y lo hace correctamente (3 puntos)
-*Si el programa solicita y muestra los datos correctamente usando el Arreglo de Estructuras Anidadas y usando las 2 funciones implementadas (3 puntos)
-*Estilo del código fuente correcto: sangrías, comentarios, nombres de variables (1 punto)
-*/
-
-//* *librerias
+//* librerias
 #include <iostream>
 using namespace std;
 
@@ -40,19 +26,22 @@ struct factura{
 const int MAX=3;
 
 //* prototipo de funcion
-factura leerFactura(void);
+factura leerFactura(int);
 void imprimirFactura(factura, int);
 
+//* funcion principal
 int main(void){
-  //* declaracion de variables
+  // declaracion de variables
   factura factura[MAX];
   
-  //* solicitar datos
+  // llamar funcion para solicitar datos
   for(int i=0; i<MAX; i++){
-    factura[i] = leerFactura();
+    factura[i] = leerFactura(i+1);
+    // se limpia el buffer despues de cada lectura para evitar errores al leer el siguiente
+    cin.ignore();
   }
 
-  //* llamar funcion para imprimir las facturas
+  // llamar funcion para imprimir las facturas
   for(int i=0; i<MAX; i++){
     imprimirFactura(factura[i], i+1);
   }
@@ -60,11 +49,16 @@ int main(void){
   return 0;
 } //* main
 
+//* ==================================================================================
+
 //* definicion de funciones
-factura leerFactura(void){
+//* funcion leerFactura
+factura leerFactura(int num){
+  // declaracion de variables
   factura datos;
 
-  cin.ignore();
+  // solicitar los datos de cada elemento del arreglo
+  cout << "\nIngrese los datos de la factura no." << num << endl;
   cout << "Ingrese el nombre de la empresa: ";
   cin.getline(datos.datosFiscales.nombreEmpresa, 99);
   
@@ -84,11 +78,15 @@ factura leerFactura(void){
   cout << "Ingrese el importe total de la factura: $";
   cin >> datos.datosFiscales.importeTotal;
 
+  // se regresa a main() los campos rellenados de la variable estructura
   return datos;
-}
+} //* funcion leerFactura
 
-//* ==================================================================================
+// ==================================================================================
+
+//* funcion imprimirFactura
 void imprimirFactura(factura factura, int num){
+  // se imprime cada elemento del arreglo de estructuras en formato de boucher
   cout << "------------------- Factura no" << num <<" -------------------" << endl;
   cout << "Nombre de la empresa: " << factura.datosFiscales.nombreEmpresa << endl;
   cout << "Numero de la factura: " << factura.numFactura << endl;
@@ -97,6 +95,6 @@ void imprimirFactura(factura factura, int num){
   cout << "Motivo de la factura: " << factura.concepto << endl;
   cout << "Importe total de la factura: $" << factura.datosFiscales.importeTotal << endl;
   cout << "---------------------------------------------------" << endl;
-} //* funcion
+} //* funcion imprimirFactura
 
 //* fin de archivo
