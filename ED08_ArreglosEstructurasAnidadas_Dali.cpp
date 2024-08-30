@@ -37,7 +37,7 @@ struct factura{
 };
 
 //* constantes
-const int MAX=1;
+const int MAX=3;
 
 //* prototipo de funcion
 factura leerFactura(void);
