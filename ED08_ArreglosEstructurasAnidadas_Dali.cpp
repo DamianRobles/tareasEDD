@@ -1,9 +1,29 @@
 /*
-  Fecha: martes 27 agosto de 2024
-  Autor: Dali
-  Practica No.: 7
-  Objetivo: Arreglos de estructuras anidadas
+  *Fecha: martes 27 agosto de 2024
+  *Autor: Dali
+  *Practica No.: 7
+  *Objetivo: Arreglos de estructuras anidadas
 */
+
+/*
+*Deberás utilizar la estructura "MiFactura" usada en la Actividad #3  (5 elementos mínimo) práctica ED05_MiFactura_Nombre_del_Alumno.cpp
+*
+*Uno de sus elementos deberá ser un campo tipo de dato de otra estructura creada por medio de struct (estructura anidada). 
+*
+*Deberás  leer y almacenar los datos para un arreglo de 3 elementos tipo de dato tu estructura anidada (arreglo de estructuras anidadas).
+*
+*Implementar una función para leer una variable del tipo de dato de tu propia estructura anidada, la función la devolverá y será asignada a cada elemento de tu arreglo de estructuras declarado en el main( ).
+*
+*Implementar una función que deberá recibir e imprimir todos los elementos de tu arreglo de estructuras. Puede recibir todo el arreglo para imprimirlo o bien, puede recibir cada elemento del arreglo, uno por uno e imprimirlos.
+*/
+
+/*
+*Si creó una función para leer y devolver una variable de la estructura definida con 5 miembros y anidada y lo hace correctamente. (3 puntos)
+*Si creó una función para imprimir los elementos de un arreglo de estructuras, que se recibirán como parámetro en la función y lo hace correctamente (3 puntos)
+*Si el programa solicita y muestra los datos correctamente usando el Arreglo de Estructuras Anidadas y usando las 2 funciones implementadas (3 puntos)
+*Estilo del código fuente correcto: sangrías, comentarios, nombres de variables (1 punto)
+*/
+
 
 // librerias
 #include <iostream>
