@@ -41,9 +41,12 @@ int main(void){
     cin.ignore();
   }
 
+  // doble salto de linea con fines esteticos
+  cout << endl << endl;
   // llamar funcion para imprimir las facturas
   for(int i=0; i<MAX; i++){
     imprimirFactura(factura[i], i+1);
+    cout << endl;
   }
   
   return 0;
