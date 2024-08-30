@@ -37,7 +37,7 @@ struct factura{
 };
 
 //* constantes
-const int MAX=3;
+const int MAX=1;
 
 //* prototipo de funcion
 factura leerFactura(void);
@@ -61,8 +61,10 @@ int main(void){
 } //* main
 
 //* definicion de funciones
-factura leerFactura(){
+factura leerFactura(void){
   factura datos;
+
+  cin.ignore();
   cout << "Ingrese el nombre de la empresa: ";
   cin.getline(datos.datosFiscales.nombreEmpresa, 99);
   
@@ -81,11 +83,13 @@ factura leerFactura(){
   
   cout << "Ingrese el importe total de la factura: $";
   cin >> datos.datosFiscales.importeTotal;
+
+  return datos;
 }
 
 //* ==================================================================================
 void imprimirFactura(factura factura, int num){
-  cout << "--------------------- Factura no." << num <<" ---------------------" << endl;
+  cout << "------------------- Factura no" << num <<" -------------------" << endl;
   cout << "Nombre de la empresa: " << factura.datosFiscales.nombreEmpresa << endl;
   cout << "Numero de la factura: " << factura.numFactura << endl;
   cout << "Nombre del comprador: " << factura.nomCompleto << endl;
