@@ -19,11 +19,11 @@
 *Estilo del código fuente correcto: sangrías, comentarios, nombres de variables (1 punto)
 */
 
-// librerias
+//* *librerias
 #include <iostream>
 using namespace std;
 
-// TDA
+//* TDA
 struct factura{
   struct sat{
     char rfc[14];
@@ -36,20 +36,20 @@ struct factura{
   sat datosFiscales;  
 };
 
-// prototipo de funcion
+//* prototipo de funcion
 void imprimirFactura(factura);
 
 int main(void){
-  // declaracion de variables
+  //* declaracion de variables
   factura fact1 = {
-    // datos factura
+    //* datos factura
     "Beatriz Pinzon Solano", 25, "Prestamo TERRAMODA",
-    // datos fiscales (estructura anidada sat)
+    //* datos fiscales (estructura anidada sat)
     {"PISB740321EM5", "ECOMODA", 50000000}
   };
   factura fact2, fact3;
   
-  // solicitar datos
+  //* solicitar datos
   cout << "Ingrese el nombre de la empresa: ";
   cin.getline(fact2.datosFiscales.nombreEmpresa, 99);
   
@@ -70,20 +70,20 @@ int main(void){
   cin >> fact2.datosFiscales.importeTotal;
 
 
-  // llamar funcion para imprimir las facturas
+  //* llamar funcion para imprimir las facturas
   cout << endl;
   imprimirFactura(fact1);
   cout << endl;
   imprimirFactura(fact2);
   cout << endl;
-  // se copian los valores de la factura 1 a la factura 3
+  //* se copian los valores de la factura 1 a la factura 3
   fact3 = fact2;
   imprimirFactura(fact3);
   
   return 0;
-} // main
+} //* main
 
-// definicion de funciones
+//* definicion de funciones
 void imprimirFactura(factura factura){
   cout << "--------------------- Factura ---------------------" << endl;
   cout << "Nombre de la empresa: " << factura.datosFiscales.nombreEmpresa << endl;
@@ -93,6 +93,6 @@ void imprimirFactura(factura factura){
   cout << "Motivo de la factura: " << factura.concepto << endl;
   cout << "Importe total de la factura: $" << factura.datosFiscales.importeTotal << endl;
   cout << "---------------------------------------------------" << endl;
-} // funcion
+} //* funcion
 
-// fin de archivo
+//* fin de archivo
