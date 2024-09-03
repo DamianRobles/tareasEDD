@@ -5,6 +5,14 @@
   ! Objetivo: 
 */
 
+/*
+  ? el nombre del arreglo es la direccion de memoria del primer elemento del arreglo
+  ? ap = vector;
+  ? ap = &vector[0]
+  ? esas 2 formas de representarlo es lo mismo
+  ? no se puede modificar los nombres de los arreglos ni mover de lugar los valores como si fuera un apuntador
+*/
+
 //* librerias
 #include <iostream>
 using namespace std;
@@ -13,7 +21,7 @@ using namespace std;
 
 int main(void){
   // declaracion de variables
-  
+
   
   return 0;
 } //* main
