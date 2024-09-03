@@ -11,7 +11,7 @@ using namespace std;
 
 //* prototipos
 void modificador(int);
-void modificadorDir(int &);
+void modificadorD(int &);
 
 int main(void){
   // declaracion de variables
@@ -31,9 +31,9 @@ int main(void){
   cout << "numero= " << numero << " DESPUES de ir a la funcion" << endl;
   
   // 2) Paso de parametros por direccion o referencia
-  cout << "2) Paso por referencia" << endl;
+  cout << endl << "2) Paso por referencia" << endl;
   cout << "numero= " << numero << " ANTES de ir a la funcion" << endl;
-  modificadorDir(numero);
+  modificadorD(numero);
   cout << "numero= " << numero << " DESPUES de ir a la funcion" << endl;
   
   return 0;
@@ -45,9 +45,9 @@ void modificador(int num){
   return;
 } //* modificador
 
-void modificadorDir(int num){
-  num = 999;
+void modificadorD(int &num){
+  num = 666;
   return;
-} //* modificadorDir
+} //* modificadorD
 
 //* fin de archivo
