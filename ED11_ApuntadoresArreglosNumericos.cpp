@@ -13,7 +13,7 @@ using namespace std;
 
 int main(void){
   // declaracion de variables
-
+  
   
   return 0;
 } //* main
