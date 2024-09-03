@@ -1,11 +1,11 @@
 /*
-  Fecha: jueves 29 agosto de 2024
-  Autor: Dali
-  Practica No.: 9
-  Objetivo: manipulacion de apuntadores
+  ! Fecha: jueves 29 agosto de 2024
+  ! Autor: Dali
+  ! Practica No.: 9
+  ! Objetivo: manipulacion de apuntadores
 */
 
-// librerias
+//* librerias
 #include <iostream>
 using namespace std;
 
@@ -34,9 +34,9 @@ int main(void){
   cout << "Salario (apt): " << *apSalario << endl;
   
   return 0;
-} // main
+} //* main
 
-// implementacion de funciones
+//* implementacion de funciones
 
 
-// fin de archivo
+//* fin de archivo
