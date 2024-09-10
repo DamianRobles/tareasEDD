@@ -18,7 +18,7 @@
 #include <string.h>
 using namespace std;
 
-//* prototipos
+//* implementacion de funciones
 int longCad(char *cadena){
   int contador=0;
   while(*cadena != '\0'){
@@ -28,6 +28,7 @@ int longCad(char *cadena){
 
   return contador;
 }//* longCad()
+
 
 //* funcion principal
 int main(void){
