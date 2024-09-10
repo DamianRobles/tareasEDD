@@ -1,7 +1,7 @@
 /*
   ! Fecha: jueves 5 de septiembre de 2024
   ! Autor: Dali
-  ! Practica No.: 11
+  ! Practica No.: 12
   ! Objetivo: Apuntadores a arreglos numericos
 */
 
@@ -24,19 +24,19 @@ const int MAX=5;
 //* funcion principal
 int main(void){
   // declaracion de variables
-  int valores[MAX];
-  int *ap =  valores;
+  double valores[MAX];
+  double *ap =  valores;
 
   // leer datos
-  cout << "Este programa ejemplifica la relacion de un apuntador a un arreglo numerico" << endl;
-  cout << "Ingrese 5 valores enteros: " << endl;
+  cout << "Este programa ejemplifica la relacion de un apuntador a un arreglo numerico DOBLE" << endl;
+  cout << "Ingrese 5 valores reales: " << endl;
   for(int i=0; i<MAX; i++){
     cout << "Numero " << i+1 << ": ";
     cin >> valores[i];
   }
 
   // mostrar datos
-  cout << "Los " << MAX << " numeros enteros guardados son" << endl;
+  cout << "Los " << MAX << " numeros reales guardados son" << endl;
   cout << "ap= " << ap << endl;
   for(int i=0; i<MAX; i++){
     cout << "Numero " << i+1 << ": " << valores[i] << endl;
@@ -44,8 +44,8 @@ int main(void){
   } // for i
 
   cout << endl << endl;
-  
-  cout << "Tamano en bytes de un entero: " << sizeof(int) << endl;
+
+  cout << "Tamano en bytes de un entero: " << sizeof(double) << endl;
   cout << "Tamano en bytes para el arreglo valores: " << sizeof(valores) << endl;
   cout << "Direccion de memoria donde inicia el arreglo valores[]: " << &valores[0] << endl;
   // mostrar datos con apuntador
