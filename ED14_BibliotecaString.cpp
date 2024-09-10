@@ -7,7 +7,7 @@
   *! Leer y almacenar una cadena de caracteres en arreglo
   *! Implementa la función longitud de cadena usando apuntadores
   *! Implementa la función concatenar dos cadenas usando apuntadores
-  ! Implementa la función convertir a minúsculas una cadena usando apuntadores
+  *! Implementa la función convertir a minúsculas una cadena usando apuntadores
   ! Implementa la función copiar una cadena en otra usando apuntadores
   ! Implementa la función comparar dos cadenas
 */
