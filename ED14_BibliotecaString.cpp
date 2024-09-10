@@ -6,7 +6,7 @@
 /*
   *! Leer y almacenar una cadena de caracteres en arreglo
   *! Implementa la función longitud de cadena usando apuntadores
-  ! Implementa la función concatenar dos cadenas usando apuntadores
+  *! Implementa la función concatenar dos cadenas usando apuntadores
   ! Implementa la función convertir a minúsculas una cadena usando apuntadores
   ! Implementa la función copiar una cadena en otra usando apuntadores
   ! Implementa la función comparar dos cadenas
@@ -38,6 +38,12 @@ int main(void){
   cout << "Personaje: " << personaje << endl;
   conCad(pelicula, personaje);
   cout << pelicula << endl;
+
+  // 3. Funcion convertir a minusculas
+  cout << "Pelicula antes de conv. a minus.: " << pelicula << endl;
+  minusCad(pelicula);
+  cout << "Pelicula en minusculas: " << pelicula << endl;
+
 
   return 0;
 } //* main

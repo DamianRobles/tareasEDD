@@ -11,6 +11,7 @@ int longCad(char *cadena){
     contador++; // calcula la long
     cadena++; // recorre el apuntador
   }
+
   return contador;
 }//* longCad()
 
@@ -31,8 +32,19 @@ void conCad(char *peli, char *pers){
 
   // 3. fin de cadena a peli
   *peli = '\0';
-  
+
+  return;
 }//* conCad()
 
-//! 1. longCad
+//! 3. minusCad
 //! ====================================================
+void minusCad(char *cadena){
+  while(*cadena != '\0'){
+    if(*cadena >= 65 && *cadena <= 90){
+      *cadena += 32;
+    } // if
+    cadena++;
+  } // while
+
+  return;
+}//* minusCad()
