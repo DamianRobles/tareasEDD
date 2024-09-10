@@ -10,25 +10,12 @@
   ? Implementa la función convertir a minúsculas una cadena usando apuntadores
   ? Implementa la función copiar una cadena en otra usando apuntadores
   ? Implementa la función comparar dos cadenas
-
 */
 
 //* librerias
 #include <iostream>
-#include <string.h>
+#include "biblioCad.h"
 using namespace std;
-
-//* implementacion de funciones
-int longCad(char *cadena){
-  int contador=0;
-  while(*cadena != '\0'){
-    contador++; // calcula la long
-    cadena++; // recorre el apuntador
-  }
-
-  return contador;
-}//* longCad()
-
 
 //* funcion principal
 int main(void){
