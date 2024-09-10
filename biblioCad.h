@@ -1,16 +1,10 @@
 /*
   ! Fecha: Martes 10 de septiembre de 2024
   ! Archivo biblioCad.h
-/*
-  ? Leer y almacenar una cadena de caracteres en arreglo
-  ? Implementa la función longitud de cadena usando apuntadores
-  ? Implementa la función concatenar dos cadenas usando apuntadores
-  ? Implementa la función convertir a minúsculas una cadena usando apuntadores
-  ? Implementa la función copiar una cadena en otra usando apuntadores
-  ? Implementa la función comparar dos cadenas
 */
 
-//* 1. longCad
+//! 1. longCad
+//! ====================================================
 int longCad(char *cadena){
   int contador=0;
   while(*cadena != '\0'){
@@ -19,3 +13,26 @@ int longCad(char *cadena){
   }
   return contador;
 }//* longCad()
+
+//! 2. conCad
+//! ====================================================
+void conCad(char *peli, char *pers){
+  // 1. ir al final de peli
+  while(*peli != '\0'){
+    peli++;
+  }// while
+
+  // 2. copiar pers en peli
+  while(*pers != '\0'){
+    *peli = *pers;
+    peli++;
+    pers++;
+  } // while
+
+  // 3. fin de cadena a peli
+  *peli = '\0';
+  
+}//* conCad()
+
+//! 1. longCad
+//! ====================================================
