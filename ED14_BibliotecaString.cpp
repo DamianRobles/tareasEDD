@@ -2,21 +2,37 @@
   ! Fecha: Lunes 16 de septiembre de 2024
   ! Autor: Dali
   ! Practica No.: 14
-  ! Objetivo: Aritmetica de apuntadores
+  ! Objetivo: Apuntadores y cadenas
+/*
+  ? Leer y almacenar una cadena de caracteres en arreglo
+  ? Implementa la función longitud de cadena usando apuntadores
+  ? Implementa la función concatenar dos cadenas usando apuntadores
+  ? Implementa la función convertir a minúsculas una cadena usando apuntadores
+  ? Implementa la función copiar una cadena en otra usando apuntadores
+  ? Implementa la función comparar dos cadenas
+
 */
 
 //* librerias
 #include <iostream>
+#include <string.h>
 using namespace std;
 
 //* prototipos
-
-const int MAX=5;
+int longCad(char *);
 
 //* funcion principal
 int main(void){
   // declaracion de variables
+  char pelicula[50];
 
+  cout << "Este programa ejemplifica la relacion Apuntadores y cadenas" << endl;
+
+  // leer la cadena
+  cout << "Ingresa el titulo de tu pelicula favorita: ";
+  cin.getline(pelicula, 50, '\n');
+
+  return 0;
 } //* main
 
 //* implementacion de funciones
