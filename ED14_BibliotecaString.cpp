@@ -19,7 +19,15 @@
 using namespace std;
 
 //* prototipos
-int longCad(char *);
+int longCad(char *cadena){
+  int contador=0;
+  while(*cadena != '\0'){
+    contador++; // calcula la long
+    cadena++; // recorre el apuntador
+  }
+
+  return contador;
+}//* longCad()
 
 //* funcion principal
 int main(void){
@@ -32,10 +40,11 @@ int main(void){
   cout << "Ingresa el titulo de tu pelicula favorita: ";
   cin.getline(pelicula, 50, '\n');
 
+  // 1. Funcion para calcular la longitud de una cadena
+  cout << pelicula << " tiene " << longCad(pelicula) << " caracteres de longitud" << endl;
+
   return 0;
 } //* main
-
-//* implementacion de funciones
 
 
 //* fin de archivo
