@@ -29,20 +29,31 @@ int main(void){
   cin.getline(pelicula, 100, '\n');
   cout << "Ingresa el nombre del personaje favorito de tu pelicula: ";
   cin.getline(personaje, 50, '\n');
+  cout << endl << endl;
 
   // 1. Funcion para calcular la longitud de una cadena
   cout << pelicula << " tiene " << longCad(pelicula) << " caracteres de longitud" << endl;
+  cout << endl << endl;
 
   // 2. Funcion para concatenar dos cadenas
   cout << "Pelicula: " << pelicula << endl;
   cout << "Personaje: " << personaje << endl;
   conCad(pelicula, personaje);
-  cout << pelicula << endl;
+  cout << "Ahora pelicula contiene: " << pelicula << endl;
+  cout << endl << endl;
 
   // 3. Funcion convertir a minusculas
   cout << "Pelicula antes de conv. a minus.: " << pelicula << endl;
   minusCad(pelicula);
   cout << "Pelicula en minusculas: " << pelicula << endl;
+  cout << endl << endl;
+
+  // 4. Funcion copiar una cadena en otra
+  cout << "Pelicula: " << pelicula << endl;
+  cout << "Personaje: " << personaje << endl;
+  copCad(pelicula, personaje);
+  cout << "Ahora pelicula contiene: " << pelicula << endl;
+  cout << endl << endl;
 
 
   return 0;

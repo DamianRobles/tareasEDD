@@ -48,3 +48,19 @@ void minusCad(char *cadena){
 
   return;
 }//* minusCad()
+
+//! 4. copCad
+//! ====================================================
+void copCad(char *peli, char *pers){
+  // 1. copiar pers en peli
+  while(*pers != '\0'){
+    *peli = *pers;
+    peli++;
+    pers++;
+  } // while
+
+  // 2. fin de cadena a peli
+  *peli = '\0';
+
+  return;
+}//* conCad()
