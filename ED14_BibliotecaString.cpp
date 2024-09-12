@@ -3,6 +3,7 @@
   ! Autor: Dali
   ! Practica No.: 14
   ! Objetivo: Apuntadores y cadenas
+*/
 /*
   *! Leer y almacenar una cadena de caracteres en arreglo
   *! Implementa la función longitud de cadena usando apuntadores
