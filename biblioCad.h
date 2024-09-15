@@ -93,7 +93,7 @@ bool cmpCad(char *peli, char *pers){
   } // while
 
   return true;
-}// cmpCad()
+}//* cmpCad()
 
 
 //! 6. revCad (TAREA 1)
@@ -104,7 +104,7 @@ void revCad(char *cadena){
   char aux;
   // calcular long de la cadena
   largo = longCad(cadena);
-  // copiar la cadena al reves
+  // acomodar la cadena al reves
   for(int i=0; i<largo/2; i++){
     aux = cadena[i];
     cadena[i] = cadena[largo-1-i];
