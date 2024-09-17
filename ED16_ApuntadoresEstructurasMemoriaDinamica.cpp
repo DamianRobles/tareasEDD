@@ -1,7 +1,7 @@
 /*
-  ! Fecha: jueves 12 de septiembre de 2024
+  ! Fecha: martes 17 de septiembre de 2024
   ! Autor: Dali
-  ! Practica No.: 15
+  ! Practica No.: 16
   ! Objetivo: Apuntadores a estructuras
 */
 
