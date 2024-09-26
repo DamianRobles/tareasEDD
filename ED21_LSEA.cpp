@@ -28,6 +28,7 @@
   void buscarTitulo();
   void agregarFinal();
   void eliminarFinal();
+  void filtrarPrecio(); // TAREA 1
   void eliminarInicio(); // ! TAREA 2
   void menu();
   
@@ -59,6 +60,9 @@
         break;
       case 5:
         eliminarFinal();
+        break;
+      case 8:
+        filtrarPrecio();
         break;
       case 9:
         eliminarInicio();
@@ -295,29 +299,41 @@
     } // if si lo eliminamos
     return;
   } // eliminarFinal()
+  
+  //? buscarRango()  TAREA
+//! ==============================================================
+void filtrarPrecio(){
+  //? se debe den de mostrar todos los juegos que esten en el rango del precio con un if min && max
+  //? declarar var bool para indicar si encontro algun dato o no
+  //? if encontrado == false, mostrar que no se encontro nada
+  float precioMinimo, precioMaximo;
+  bool encontrado = false;
+  
+  return;
+} // filtrarPrecio()
 
-  //! eliminarInicio()  TAREA
-  //! ==============================================================
-  void eliminarInicio(){
-    
-    return;
-  } // eliminarInicio()
+//? eliminarInicio()  TAREA
+//! ==============================================================
+void eliminarInicio(){
   
-  //! menu()
-  //! ==============================================================
-  void menu(void) {
-    cout << endl << endl;
-    cout << "Listado de mis videojuegos favoritos" << endl;
-    cout << "====================================" << endl;
-    cout << "1. Agregar un videojuego al inicio de la lista" << endl;
-    cout << "2. Consultar mi listado de videojuegos" << endl;
-    cout << "3. Buscar un videojuego por su tipo" << endl;
-    cout << "4. Agregar un videojuego al final de la lista" << endl;
-    cout << "5. Eliminar el videojuego al final de la lista" << endl;
-    
-    cout << "9. Eliminar el videojuego al inicio de la lista (Tarea)" << endl;
-    cout << "0. Salir" << endl;
+  return;
+} // eliminarInicio()
   
-    return;
-  } // menu()
+//! menu()
+//! ==============================================================
+void menu(void) {
+  cout << endl << endl;
+  cout << "Listado de mis videojuegos favoritos" << endl;
+  cout << "====================================" << endl;
+  cout << "1. Agregar un videojuego al inicio de la lista" << endl;
+  cout << "2. Consultar mi listado de videojuegos" << endl;
+  cout << "3. Buscar un videojuego por su tipo" << endl;
+  cout << "4. Agregar un videojuego al final de la lista" << endl;
+  cout << "5. Eliminar el videojuego al final de la lista" << endl;
   
+  cout << "8. Filtrar videojuegos por precio" << endl;
+  cout << "9. Eliminar el videojuego al inicio de la lista (Tarea)" << endl;
+  cout << "0. Salir" << endl;
+
+  return;
+} // menu()
