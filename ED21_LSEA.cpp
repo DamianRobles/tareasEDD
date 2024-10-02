@@ -345,9 +345,6 @@ void filtrarPrecio(){
 //! eliminarInicio()  TAREA
 //! ==============================================================
 void eliminarInicio(){
-  // caso de lista vacia
-  // caso de lista con 1 elemento
-  //? caso de lista con varios elementos
   // 1) declarar variables
   videojuego *apBorrar;
   int respuesta;
@@ -377,7 +374,7 @@ void eliminarInicio(){
         return;
     }
 
-    // caso C) lista con varios elementos
+    // caso C) lista con varios nodos
     if(apLISTA -> next != NULL){
       apBorrar = apLISTA;
       cout << "======================" << endl;
