@@ -326,7 +326,7 @@ void filtrarPrecio(){
   while (apCopia != NULL) {
     if (apCopia->precio >= precioMinimo && apCopia->precio <= precioMaximo) {
       encontrado = true;
-      cout << endl << "Listado de videojuegos" << endl;
+      cout << endl << endl << "Listado de videojuegos" << endl;
       cout << "======================" << endl;
       cout << "Titulo: " << apCopia->titulo << endl;
       cout << "Genero: " << apCopia->genero << endl;
