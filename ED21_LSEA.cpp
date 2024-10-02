@@ -315,7 +315,58 @@ void filtrarPrecio(){
 //? eliminarInicio()  TAREA
 //! ==============================================================
 void eliminarInicio(){
-  
+  // caso de lista vacia
+  // caso de lista con 1 elemento
+  //? caso de lista con varios elementos
+  // 1) declarar variables
+  videojuego *apBorrar;
+  int respuesta;
+
+  // caso A) lista vacia
+    if(apLISTA == NULL){
+      cout << "La lista esta vacia" << endl;
+      return;
+    }
+
+    // caso B) lista con 1 nodo
+    if(apLISTA -> next  == NULL){
+        cout << "======================" << endl;
+        cout << "Titulo: " << apLISTA->titulo << endl;
+        cout << "Genero: " << apLISTA->genero << endl;
+        cout << "Clasificacion: " << apLISTA->clasificacion << endl;
+        cout << "Precio: " << apLISTA->precio;
+        cout << endl << "======================" << endl;
+        cout << "Estas seguro de que quieres eliminarlo? (1 - Si, 2 - No): ";
+        cin >> respuesta;
+        if(respuesta == 1){
+          // se borra
+          free(apLISTA);
+          apLISTA = NULL;
+          cout << "El unico videojuego fue eliminado de la lista" << endl;
+        } // if si lo eliminamos
+        return;
+    }
+
+    // caso C) lista con varios elementos
+    if(apLISTA -> next != NULL){
+      cout << "======================" << endl;
+        cout << "Titulo: " << apLISTA->titulo << endl;
+        cout << "Genero: " << apLISTA->genero << endl;
+        cout << "Clasificacion: " << apLISTA->clasificacion << endl;
+        cout << "Precio: " << apLISTA->precio;
+        cout << endl << "======================" << endl;
+        cout << "Estas seguro de que quieres eliminarlo? (1 - Si, 2 - No): ";
+        cin >> respuesta;
+        if(respuesta == 1){
+          // se borra
+          free(apLISTA);
+          apLISTA = apLISTA -> next;
+          cout << "El videojuego fue eliminado de la lista" << endl;
+        } // if si lo eliminamos
+        return;
+    }
+
+
   return;
 } // eliminarInicio()
   
