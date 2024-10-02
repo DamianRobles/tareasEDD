@@ -186,8 +186,7 @@
         return;
       } // if si lo encontro
   
-      apCopia =
-          apCopia->next; //? aqui se guarda la direccion de memoria del siguiente
+      apCopia = apCopia->next; //? aqui se guarda la direccion de memoria del siguiente
     }                    // while
     cout << "El videojuego con el titulo: " << titBuscar << " no fue localizado"
         << endl;
@@ -300,19 +299,50 @@
     return;
   } // eliminarFinal()
   
-  //? buscarRango()  TAREA
+//! buscarRango()  TAREA
 //! ==============================================================
 void filtrarPrecio(){
   //? se debe den de mostrar todos los juegos que esten en el rango del precio con un if min && max
   //? declarar var bool para indicar si encontro algun dato o no
   //? if encontrado == false, mostrar que no se encontro nada
+  // declarar variables
   float precioMinimo, precioMaximo;
   bool encontrado = false;
-  
+  videojuego *apCopia = apLISTA;
+
+  // validar que este vacia
+  if (apCopia == NULL) {
+    cout << "La lista esta vacia" << endl;
+    return;
+  }
+
+  // solicitar el titulo a buscar
+  cout << "Ingresa el precio minimo del videojuego a buscar: ";
+  cin >> precioMinimo;
+  cout << "Ingresa el precio maximo del videojuego a buscar: ";
+  cin >> precioMaximo;
+
+  // buscar el videojuego
+  while (apCopia != NULL) {
+    if (apCopia->precio >= precioMinimo && apCopia->precio <= precioMaximo) {
+      encontrado = true;
+      cout << endl << "Listado de videojuegos" << endl;
+      cout << "======================" << endl;
+      cout << "Titulo: " << apCopia->titulo << endl;
+      cout << "Genero: " << apCopia->genero << endl;
+      cout << "Clasificacion: " << apCopia->clasificacion << endl;
+      cout << "Precio: " << apCopia->precio;
+    } // if si lo encontro
+    apCopia = apCopia->next; //? aqui se guarda la direccion de memoria del siguiente
+  } // while
+  if(encontrado == true)
+    return;
+  else
+    cout << "Los videojuegos con precios entre: " << precioMinimo << " y " << precioMaximo << " no fue encontrado" << endl;
   return;
 } // filtrarPrecio()
 
-//? eliminarInicio()  TAREA
+//! eliminarInicio()  TAREA
 //! ==============================================================
 void eliminarInicio(){
   // caso de lista vacia
@@ -349,21 +379,22 @@ void eliminarInicio(){
 
     // caso C) lista con varios elementos
     if(apLISTA -> next != NULL){
+      apBorrar = apLISTA;
       cout << "======================" << endl;
-        cout << "Titulo: " << apLISTA->titulo << endl;
-        cout << "Genero: " << apLISTA->genero << endl;
-        cout << "Clasificacion: " << apLISTA->clasificacion << endl;
-        cout << "Precio: " << apLISTA->precio;
-        cout << endl << "======================" << endl;
-        cout << "Estas seguro de que quieres eliminarlo? (1 - Si, 2 - No): ";
-        cin >> respuesta;
-        if(respuesta == 1){
-          // se borra
-          free(apLISTA);
-          apLISTA = apLISTA -> next;
-          cout << "El videojuego fue eliminado de la lista" << endl;
-        } // if si lo eliminamos
-        return;
+      cout << "Titulo: " << apBorrar->titulo << endl;
+      cout << "Genero: " << apBorrar->genero << endl;
+      cout << "Clasificacion: " << apBorrar->clasificacion << endl;
+      cout << "Precio: " << apBorrar->precio;
+      cout << endl << "======================" << endl;
+      cout << "Estas seguro de que quieres eliminarlo? (1 - Si, 2 - No): ";
+      cin >> respuesta;
+      if(respuesta == 1){
+        // se borra
+        apLISTA = apLISTA -> next;
+        free(apBorrar);
+        cout << "El videojuego fue eliminado de la lista" << endl;
+      } // if si lo eliminamos
+      return;
     }
 
 
