@@ -1,5 +1,6 @@
 /*
   ! Fecha: jueves 3 de octubre de 2024
+           martes 8 de ocubre de 2024
   ! Autor: Dali
   ! Practica No.: 22
   ! Objetivo: FIFO - First In First Out - QUEUE - Cola
