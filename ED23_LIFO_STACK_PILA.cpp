@@ -24,6 +24,8 @@ struct paleta {
 };
 
 //* variables globales
+// apuntador a la pila o stack
+paleta *apCima = NULL;
 
 //* operaciones
 void colocarPaleta();
@@ -65,15 +67,98 @@ int main(void) {
 //* implementacion de operaciones - funciones
 //! colocarPaleta()
 //! ==============================================================
-void colocarPaleta() {} // colocarPaleta()
+void colocarPaleta(){
+  // 1) declarar variables
+  paleta *apNuevo = NULL;
+  
+  // 2) solicitar memoria
+  apNuevo = (paleta *) malloc(sizeof(paleta));
+
+  // 3) validar apuntador
+  if (apNuevo == NULL){
+    cout << "No hay memoria disponible" << endl;
+    return;
+  }
+  // 4) solicitar datos de la nueva paleta y guardarlos
+  cin.ignore();
+  cout << endl << "Ingresa los datos de la paleta" << endl;
+  cout << "==============================" << endl;
+  cout << "Ingrese el sabor (ej. fresa): ";
+  cin.getline(apNuevo -> sabor, 30, '\n');
+  cout << "Ingrese el tamano (ej. mini, chica): ";
+  cin.getline(apNuevo -> tamaxo, 20, '\n');
+  cout << "Ingrese el marca (ej. michoacana): ";
+  cin.getline(apNuevo -> marca, 30, '\n');
+  cout << "Ingrese el precio (ej. 0.75): ";
+  cin >> apNuevo -> precio;
+
+  // 5) agregar la paleta al stack
+  apNuevo -> next = apCima;
+  apCima = apNuevo;
+  cout << "La paleta fue agregada al inicio de la pila" << endl;
+    
+  return;
+} // colocarPaleta()
 
 //! mostrarPaletas()
 //! ==============================================================
-void mostrarPaletas() {} // mostrarPaletas()
+void mostrarPaletas(){
+  // 1) declaracion de variables
+  paleta *apCopia = apCima;
+
+  // 2) validar si la pila esta vacia
+  if (apCopia == NULL){
+    cout << "No hay paletas en la pila" << endl;
+    return;
+  }
+
+  // 3) mostrar las paletas
+  while(apCopia != NULL){
+    cout << endl << "Paletas en la pila" << endl;
+    cout << "==============================" << endl;
+    cout << "Sabor: " << apCopia -> sabor << endl;
+    cout << "Tamano: " << apCopia -> tamaxo << endl;
+    cout << "Marca: " << apCopia -> marca << endl;
+    cout << "Precio: $" << apCopia -> precio << endl;
+    apCopia = apCopia -> next;
+  }
+  
+  return;
+} // mostrarPaletas()
 
 //! comerPaleta()
 //! ==============================================================
-void comerPaleta() { return; } // comerPaleta()
+void comerPaleta() { 
+  // 1) declaracion de variables
+  paleta *apBorrar = apCima;
+  int respuesta;
+
+  // 2) validar si la pila esta vacia
+  if (apBorrar == NULL){
+    cout << "No hay paletas en la pila" << endl;
+    return;
+  }
+
+  // 3) comer paleta
+  cout << endl << "Paleta a comer" << endl;
+  cout << "==============================" << endl;
+  cout << "Sabor: " << apBorrar -> sabor << endl;
+  cout << "Tamano: " << apBorrar -> tamaxo << endl;
+  cout << "Marca: " << apBorrar -> marca << endl;
+  cout << "Precio: $" << apBorrar -> precio << endl;
+  cout << "Quieres comerte la paleta? (1-Si 2-No) ";
+  cin >> respuesta;
+  if(respuesta == 1){
+    apCima = apBorrar -> next;
+    free(apBorrar);
+    cout << "La paleta fue comida" << endl;
+    return;
+  }
+  else{
+    cout << "No te comiste la paleta" << endl;
+    return;
+  }
+} // comerPaleta()
 
 //! menu()
 //! ==============================================================
