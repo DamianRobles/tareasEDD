@@ -1,1 +1,194 @@
+/*
+  ! Fecha: jueves 17 de octubre de 2024
+  ! Au}tor: Dali
+  ! Practica No.: 25
+  ! Objetivo: LDEA - lista doblemente enlazada abierta
+*/
 
+//* librerias
+#include <iostream>
+#include <stdlib.h>
+#include <string.h>
+using namespace std;
+
+//* tda's
+struct tarea {
+  // datos
+  char descripcion[100];
+  char usuario[60];
+  char fecha[15];
+  // apuntadores
+  tarea *next;
+  tarea *before;
+};
+
+//* variables globales
+// apuntador a la LDEA
+tarea *apInicio = NULL, *apFinal = NULL;
+
+//* operaciones
+void agregarInicio();
+void agregarFinal();
+void consultarFI();
+void consultarIF();
+
+//* Funciones
+void menu();
+
+//* funcion principal
+int main(void) {
+  // declaracion de variables
+  int opcion;
+
+  do {
+    menu();
+    cout << "Ingresa tu opcion: ";
+    cin >> opcion;
+    switch (opcion) {
+    case 1:
+      agregarInicio();
+      break;
+    case 2:
+      agregarFinal();
+      break;
+
+    case 0:
+      cout << "Seleccionaste salir" << endl;
+      break;
+    default:
+      cout << "Opcion no valida" << endl;
+      break;
+    } // switch
+  } while (opcion);
+
+  return 0;
+}
+
+//* implementacion de operaciones - funciones
+//! agregarInicio()
+//! ==============================================================
+void agregarInicio() {
+  // 1) declarar el apuntador
+  tarea *nueva;
+
+  // 2) solicitar la memoria
+  nueva = (tarea *) malloc(sizeof(tarea));
+
+  // 3) validar el apuntador
+  if(nueva == NULL){
+    cout << "No hay memoria suficiente para registrar una nueva tarea" << endl;
+    return;
+  }
+
+  // 4) Solicitar y almacenar los datos
+  cout <<  endl << endl;
+  cin.ignore();
+  cout << endl << "Ingresa los datos de la nueva tarea" << endl;
+  cout << "============================" << endl;
+  cin.getline(nueva->descripcion,100,'\n');
+  cout << "Usuario que realiza la actualizacion" << endl;
+  cin.getline(nueva->usuario,60,'\n');
+  cout << "Fecha de la actualizacion (dd/mm/aaaa)" << endl;
+  cin.getline(nueva->descripcion,15,'\n');
+
+  // 5) agregar la tarea al inicio de la LDEA
+  // caso A) lista vacia
+  if(apInicio == NULL && apFinal == NULL){
+    nueva -> next = NULL;
+    nueva -> before = NULL;
+    apInicio = nueva;
+    apFinal = nueva;
+    cout << "La tarea fue agregada al inicio del gestor" << endl;
+    return;
+  } // if lista vacia
+  
+  // caso B) lista no vacia
+  apInicio -> before = nueva;
+  nueva -> next = apInicio;
+  nueva -> before = NULL;
+  apInicio = nueva;
+  cout << "La tarea fue agregada al inicio del gestor" << endl;
+  
+  return;
+} // agregarInicio()  
+
+
+//?! agregarFinal() (TAREA)
+//?! ==============================================================
+void agregarFinal() {
+    // 1) declarar el apuntador
+  tarea *nueva;
+
+  // 2) solicitar la memoria
+  nueva = (tarea *) malloc(sizeof(tarea));
+
+  // 3) validar el apuntador
+  if(nueva == NULL){
+    cout << "No hay memoria suficiente para registrar una nueva tarea" << endl;
+    return;
+  }
+
+  // 4) Solicitar y almacenar los datos
+  cout <<  endl << endl;
+  cin.ignore();
+  cout << endl << "Ingresa los datos de la nueva tarea" << endl;
+  cout << "============================" << endl;
+  cout << "Descripcion de la tarea" << endl;
+  cin.getline(nueva->descripcion,100,'\n');
+  cout << "Usuario que realiza la actualizacion" << endl;
+  cin.getline(nueva->usuario,60,'\n');
+  cout << "Fecha de la actualizacion (dd/mm/aaaa)" << endl;
+  cin.getline(nueva->descripcion,15,'\n');
+
+  // 5) agregar la tarea al inicio de la LDEA
+  // caso A) lista vacia
+  if(apInicio == NULL && apFinal == NULL){
+    nueva -> next = NULL;
+    nueva -> before = NULL;
+    apInicio = nueva;
+    apFinal = nueva;
+    cout << "La tarea fue agregada al final del gestor" << endl;
+    return;
+  } // if lista vacia
+  
+  // caso B) lista no vacia
+  apInicio -> next = nueva;
+  nueva -> next = NULL;
+  nueva -> before = apInicio;
+  apFinal = nueva;
+  cout << "La tarea fue agregada al final del gestor" << endl;
+  
+  return;
+} // agregarFinal()
+
+//?! consultarIF() (TAREA))
+//?! ==============================================================
+void consultarIF(){
+  
+} // consultarIF()
+
+//! consultarFI() 
+//! ==============================================================
+void consultarFI(){
+  
+} // consultarFI()
+
+//! menu()
+//! ==============================================================
+void menu(void) {
+  cout << endl << endl;
+  cout << "         Gestor de tareas" << endl;
+  cout << "====================================" << endl;
+  cout << "1. Agregar al inicio de la lista (Clase)" << endl;
+  cout << "2. Agregar al final de la lista (Tarea)" << endl;
+  cout << "3. Consultar la lista de inicio a fin (Tarea)" << endl;
+  cout << "4. Consultar la lista de fin a inicio (Clase)" << endl;
+  cout << "5. Eliminar el primer elemento de la lista" << endl;
+  cout << "6. Eliminar el último elemento de la lista" << endl;
+  cout << "7. Buscar un elemento en la lista" << endl;
+  cout << "8. Filtrar la lista" << endl;
+  cout << "0. Salir" << endl;
+  cout << "====================================" << endl;
+
+  return;
+} // menu()
