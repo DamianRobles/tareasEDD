@@ -63,7 +63,7 @@ int main(void) {
       eliminarPrimero();
       break;
     case 6:
-      eliminarUltimo();
+      eliminarFinal();
       break;
     case 0:
       cout << "Seleccionaste salir" << endl;
