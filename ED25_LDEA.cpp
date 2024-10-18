@@ -154,7 +154,7 @@ void agregarFinal() {
   cout << "Fecha de la actualizacion (dd/mm/aaaa): ";
   cin.getline(nueva->descripcion,15,'\n');
 
-  // 5) agregar la tarea al inicio de la LDEA
+  // 5) agregar la tarea al final de la LDEA
   // caso A) lista vacia
   if(apInicio == NULL && apFinal == NULL){
     nueva -> next = NULL;
@@ -198,9 +198,9 @@ void consultarIF(){
     cout << "Tarea anterior" << apCopia -> before << endl;
     cout << "Siguiente tarea" << apCopia -> next;
     
-    // ir a la tarea anterior
+    // ir a la tarea siguiente
     apCopia = apCopia -> next;
-  }
+  } //while
   
   return;
 } // consultarIF()
@@ -238,7 +238,45 @@ void consultarFI(){
 //!? eliminarPrimero() (TAREA))
 //!? ==============================================================
 void eliminarPrimero(){
-
+  // declaracion de variables
+  tarea *apBorrar = apInicio;
+  int respuesta;
+  
+  // validar si esta vacia
+  if(apBorrar == NULL){
+    cout << "El gestor esta vacio" << endl;
+    return;
+  }
+  
+  // mostrar el primer  nodo
+  cout << endl << "         Tarea a ser eliminada" << endl;
+  cout << "============================" << endl;
+  cout << "Descripcion de la tarea: " << apBorrar->descripcion << endl;
+  cout << "Usuario que realiza la actualizacion: " << apBorrar->usuario << endl;
+  cout << "Fecha de la actualizacion (dd/mm/aaaa): " << apBorrar->descripcion << endl;
+  cout << "Estas seguro de eliminarlo? (1- Si 2- No): ";
+  cin >> respuesta;
+  if(respuesta == 1){
+    if(apBorrar -> next == NULL){
+      // 1 nodo
+      apInicio = apFinal = NULL;
+      free(apBorrar);
+    } // if si hay 1 nodo 
+    else{
+      // 2 o mas nodos
+      apBorrar->next->before = NULL;
+      apInicio = apBorrar->next;
+      free(apBorrar);      
+    }// else si hay 2 o mas nodos
+    
+    cout << "La ultima tarea fue eliminada"<< endl;
+    return;
+  }
+  else{
+    cout << "No se elimino ninguna tarea" << endl;
+  } // if else
+    
+  return;
 } //eliminarPrimero()
 
 //! eliminarUltimo()
