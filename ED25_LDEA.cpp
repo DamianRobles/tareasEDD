@@ -127,8 +127,8 @@ void agregarInicio() {
 } // agregarInicio()  
 
 
-//?! agregarFinal() (TAREA)
-//?! ==============================================================
+//!? agregarFinal() (TAREA)
+//!? ==============================================================
 void agregarFinal() {
     // 1) declarar el apuntador
   tarea *nueva;
@@ -175,9 +175,32 @@ void agregarFinal() {
   return;
 } // agregarFinal()
 
-//?! consultarIF() (TAREA))
-//?! ==============================================================
+//!? consultarIF() (TAREA))
+//!? ==============================================================
 void consultarIF(){
+  // declarar variable
+  tarea *apCopia = apFinal;
+  
+  // validar si esta vacia
+  if(apCopia == NULL){
+    cout << "El gestor esta vacio" << endl;
+    return;
+  }
+  
+  // mostrar las tareas
+  cout << endl << "Tareas guardadas en el gestor del final al inicio" << endl;
+  while(apCopia != NULL){
+    // mostrar tarea
+    cout << endl << "============================" << endl;
+    cout << "Descripcion de la tarea: " << apCopia->descripcion << endl;
+    cout << "Usuario que realiza la actualizacion: " << apCopia->usuario << endl;
+    cout << "Fecha de la actualizacion (dd/mm/aaaa): " << apCopia->descripcion << endl;
+    cout << "Tarea anterior" << apCopia -> before << endl;
+    cout << "Siguiente tarea" << apCopia -> next;
+    
+    // ir a la tarea anterior
+    apCopia = apCopia -> next;
+  }
   
   return;
 } // consultarIF()
@@ -212,6 +235,11 @@ void consultarFI(){
   return;
 } // consultarFI()
 
+//!? eliminarPrimero() (TAREA))
+//!? ==============================================================
+void eliminarPrimero(){
+
+} //eliminarPrimero()
 
 //! eliminarUltimo()
 //! ==============================================================
@@ -256,7 +284,6 @@ void eliminarUltimo(){
     
   return;
 } // eliminarUltimo()
-
 
 //! menu()
 //! ==============================================================
