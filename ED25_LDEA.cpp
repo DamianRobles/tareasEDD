@@ -32,7 +32,7 @@ void agregarFinal();
 void consultarFI();
 void consultarIF();
 void eliminarPrimero();
-void eliminarFinal();
+void eliminarUltimo();
 
 //* Funciones
 void menu();
@@ -63,7 +63,7 @@ int main(void) {
       eliminarPrimero();
       break;
     case 6:
-      eliminarFinal();
+      eliminarUltimo();
       break;
     case 0:
       cout << "Seleccionaste salir" << endl;
@@ -179,7 +179,7 @@ void agregarFinal() {
 //!? ==============================================================
 void consultarIF(){
   // declarar variable
-  tarea *apCopia = apFinal;
+  tarea *apCopia = apInicio;
   
   // validar si esta vacia
   if(apCopia == NULL){
@@ -188,7 +188,7 @@ void consultarIF(){
   }
   
   // mostrar las tareas
-  cout << endl << "Tareas guardadas en el gestor del final al inicio" << endl;
+  cout << endl << "Tareas guardadas en el gestor del inicio al final" << endl;
   while(apCopia != NULL){
     // mostrar tarea
     cout << endl << "============================" << endl;
