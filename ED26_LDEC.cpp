@@ -1,5 +1,5 @@
 /*
-  ! Fecha: jueves 17 de octubre de 2024
+  ! Fecha: martes 22 de octubre de 2024
   ! Au}tor: Dali
   ! Practica No.: 26
   ! Objetivo: LDEC - lista doblemente enlazada cerada
@@ -29,7 +29,7 @@ cancion *apPlayList = NULL;
 
 //* operaciones
 void agregar();
-void agregar();
+void eliminar();
 void consultar();
 void buscar();
 
@@ -50,10 +50,10 @@ int main(void) {
       agregar();
       break;
     case 2:
-      agregar();
+      consultar();
       break;
     case 3:
-      consultar();
+      eliminar();
       break;
     case 4:
       buscar();
@@ -71,22 +71,21 @@ int main(void) {
 }
 
 //* implementacion de operaciones - funciones
-//! agregarInicio()
+//! agregar()
 //! ==============================================================
-void agregarInicio() {
-  
-}
+void agregar() {
+} // agregar
 
 //! menu()
 //! ==============================================================
 void menu(void) {
   cout << endl << endl;
-  cout << "         Gestor de canciones" << endl;
+  cout << "                           Playlist" << endl;
   cout << "====================================" << endl;
-  cout << "1. Agregar al inicio de la lista (Clase)" << endl;
-  cout << "2. Agregar al final de la lista (Tarea)" << endl;
-  cout << "3. Consultar la lista de inicio a fin (Tarea)" << endl;
-  cout << "4. Consultar la lista de fin a inicio (Clase)" << endl;
+  cout << "1. Agregar cancion a la lista" << endl;
+  cout << "2. Consultar canciones en la lista (Tarea)" << endl;
+  cout << "3. Eliminar cancion de la lista" << endl;
+  cout << "4. Buscar canciones de la lista (Clase)" << endl;
   cout << "0. Salir" << endl;
   cout << "====================================" << endl;
 
