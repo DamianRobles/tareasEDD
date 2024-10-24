@@ -1,5 +1,6 @@
 /*
   ! Fecha: jueves 17 de octubre de 2024
+                 jueves 24 de octubre de 2024
   ! Au}tor: Dali
   ! Practica No.: 25
   ! Objetivo: LDEA - lista doblemente enlazada abierta
@@ -33,6 +34,8 @@ void consultarFI();
 void consultarIF();
 void eliminarPrimero();
 void eliminarUltimo();
+void buscar();
+void filtrar();
 
 //* Funciones
 void menu();
@@ -64,6 +67,12 @@ int main(void) {
       break;
     case 6:
       eliminarUltimo();
+      break;
+    case 7:
+      buscar();
+      break;
+    case 8:
+      filtrar();
       break;
     case 0:
       cout << "Seleccionaste salir" << endl;
@@ -322,6 +331,90 @@ void eliminarUltimo(){
     
   return;
 } // eliminarUltimo()
+
+//! buscar()
+//! ==============================================================
+void buscar(){
+    // declarar variable
+  tarea *apCopia = apInicio;
+  char tareaBuscar[100];
+  
+  // validar si esta vacia
+  if(apCopia == NULL){
+    cout << "El gestor esta vacio" << endl;
+    return;
+  }
+  
+  cout << "Ingrese la descripcion de la tarea a buscar: ";
+  cin.ignore();
+  cin.getline(tareaBuscar, 100, '\n');
+  
+  
+  // mostrar las tareas
+  cout << endl << "Busqueda de tareas guardadas en el gestor" << endl;
+  while(apCopia != NULL){
+    // mostrar tarea
+    if(strcmp(tareaBuscar, apCopia->descripcion)==0){
+      cout << endl << "Tarea encontrada" << endl;
+      cout << endl << "============================" << endl;
+      cout << "Descripcion de la tarea: " << apCopia->descripcion << endl;
+      cout << "Usuario que realiza la actualizacion: " << apCopia->usuario << endl;
+      cout << "Fecha de la actualizacion (dd/mm/aaaa): " << apCopia->descripcion << endl;
+      return;
+    }
+    // ir a la tarea siguiente
+    apCopia = apCopia -> next;
+  } //while
+  
+  cout << "La tarea " << tareaBuscar << " no fue encontrada" << endl;
+  
+  return;
+} // buscar()
+
+
+//! filtrar()
+//! ==============================================================
+void filtrar(){
+  // declarar variable
+  tarea *apCopia = apInicio;
+  char usuarioBuscar[100];
+  bool encontrado = false;
+  
+  // validar si esta vacia
+  if(apCopia == NULL){
+    cout << "El gestor esta vacio" << endl;
+    return;
+  }
+  
+  cout << "Ingrese el nombre de usuario: ";
+  cin.ignore();
+  cin.getline(usuarioBuscar, 60, '\n');
+  
+  
+  // mostrar las tareas
+  cout << endl << " Filtrado de tareas guardadas en el gestor" << endl;
+  while(apCopia != NULL){
+    // mostrar tarea
+    cout << endl << "Tareas realizadas por: " << apCopia->usuario << endl;
+    if(strcmp(usuarioBuscar, apCopia->usuario)==0){
+      cout << endl << "============================" << endl;
+      cout << "Descripcion de la tarea: " << apCopia->descripcion << endl;
+      cout << "Usuario que realiza la actualizacion: " << apCopia->usuario << endl;
+      cout << "Fecha de la actualizacion (dd/mm/aaaa): " << apCopia->descripcion << endl << endl;
+      encontrado = true;
+    }
+    // ir a la tarea siguiente
+    apCopia = apCopia -> next;
+  } //while
+  
+  if(!encontrado){
+    cout << "No existen tareas realizadas por el usuario " << usuarioBuscar << endl;
+    return;
+  }
+  
+  return;
+} // filtrar()
+
 
 //! menu()
 //! ==============================================================
