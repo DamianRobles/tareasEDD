@@ -95,7 +95,7 @@ void agregar() {
   cin.getline(nueva->titulo,50,'\n');
   cout << "Artista: ";
   cin.getline(nueva->artista,50,'\n');
-  cout << "Duracion (mm:ss)): ";
+  cout << "Duracion (mm:ss): ";
   cin.getline(nueva->duracion,6,'\n');
   cout << "Genero: ";
   cin.getline(nueva->genero,30,'\n');
@@ -151,6 +151,52 @@ void consultar() {
 //! eliminar()
 //! ==============================================================
 void eliminar() {
+    // declarar variable
+  cancion *apCopia = apPlayList;
+  int respuesta;
+  
+  // caso A) lista vacia
+  if(apCopia == NULL){
+    cout << "La playlist esta vacia" << endl;
+    return;
+  }
+  
+  // mostrar las canciones
+  cout << endl << "Cancionces guardadas en la playlist" << endl;
+  do{
+    // mostrar  cancion
+    cout << endl << "============================" << endl;
+    cout << "Titulo: " << apCopia->titulo << endl;
+    cout << "Artista: " << apCopia->artista << endl;
+    cout << "Duracion: " << apCopia->duracion << endl;
+    cout << "Genero: " << apCopia->genero << endl;
+    cout << endl << "Deseas eliminar la cancion? (1-Si 2-No): ";
+    cin >> respuesta;
+    if(respuesta == 1){
+      // caso B) lista con 1 nodo
+      if(apCopia->next == apCopia){
+        apPlayList == NULL;
+        free(apCopia);
+        cout << "La cancion fue eliminada" << endl;
+        return;
+      }
+      // caso C) lista con 2 o mas nodos
+      if(apCopia == apPlayList){
+        apPlayList = apPlayList->next;
+      } // if si se quiere borrar la cancion en apPlayList
+      apCopia->before->next = apCopia->next;
+      apCopia->next->before = apCopia->before;
+      free(apCopia);
+      cout << "La cancion fue eliminada" << endl;
+      return;
+    }
+    
+    // ir a la cancion siguiente
+    apCopia = apCopia -> next;
+  } while(apPlayList != apCopia);
+  
+  cout << "No eliminaste ninguna cancion" << endl;
+  return;
 } // eliminar
 
 //! buscar()
